@@ -1,0 +1,37 @@
+.header-entrada {
+
+	margin: 40px auto 0;
+
+	// Separação do topo, para o conteúdo
+	&:before {
+		position: absolute;
+		right: 0;
+		bottom: -11px;
+		width: 680px;
+		height: 1px;
+		border-top: 1px solid #E9E9E9;
+		background: #BEBEBE;
+		content: " ";
+	}
+
+	h1 {
+		margin: 0;
+		padding: 0;
+		line-height: 24px;
+	}
+
+	p {
+		margin: 6px 0;
+	}
+
+	.avatar {
+		float: left;
+		width: 91px;
+		height: 91px;
+	}
+
+	// Foto no topo
+	.foto {
+		display: none;
+	}
+}

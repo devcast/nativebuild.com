@@ -1,0 +1,87 @@
+.home-post-container,
+.post-container {
+	margin: 20px 0 0 22px;
+	line-height: 23px;
+
+	p {
+		font-size: 13px;
+	}
+
+	h2 {
+		margin: 0;
+		line-height: 35px;
+	}
+}
+
+.home-post-image {
+	float: left;
+	position: relative;
+	width: 190px;
+	height: 150px;
+	overflow: hidden;
+	margin: 0 11px 0 0;
+
+	img {
+		position: absolute;
+	}
+}
+
+.home-post-resumo {
+	line-height: 15px;
+}
+
+.home-post-link {
+	display: block;
+	overflow: hidden;
+
+	img {
+		width: 100%;
+		background: url(/img/img-loading.gif) center center no-repeat;
+	}
+
+	&:hover, &:focus {
+		// text-decoration: none;
+
+		p, h2 {
+			color: #6B6B6B;
+		}
+
+		h2 {
+			text-decoration: underline;
+		}
+
+		img {
+			// -webkit-transform: scale(1.4);
+		}
+	}
+}
+
+// Post único
+.post-container {
+	a {
+		border-bottom: 1px dashed #333;
+	}
+
+	img {
+		max-width: 100%;
+	}
+
+
+}
+
+// posicionamento do botão de like do facebook
+.fb-like {
+	position: relative;
+	top: -3px;
+	margin: 0 33px 0 0;
+}
+
+// Posicionamento dos comentário do DISQUS
+// e container de links para compartilhar
+#disqus_thread,
+.post-share-links {
+	margin: 17px 0 0 23px;
+	padding: 20px 0 0 0;
+	width: 677px;
+	border-top: 1px dashed #999;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>{% if page.title %}{{ page.title - }}{% endif %} {{ site.title }}</title>
+  <meta name="description" content="{% if page.resumo %}{{ page.resumo }}{% else %} {{ site.description }} {% endif %}" />
+  <meta property="og:description" content="{% if page.resumo %}{{ page.resumo }}{% else %} {{ site.description }} {% endif %}" />
+
+  <link rel="author" href="https://plus.google.com/102754289882659476963/" />
+
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="fb:admins" content="100001345144139" />
+  <meta property="og:title" content="{% if page.title %} {{ page.title - }} {% endif %} {{ site.title }}" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="{% if page.image %}{{ site.url }}{{ page.image }}{% else %}{{ site.url }}/img/default-share-image.jpg{% endif %}" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:url" content="{{ site.url }}" />
+  <meta name="twitter:title" content="{% if page.title %} {{ page.title - }} {% endif %} {{ site.title }}" />
+  <meta name="twitter:image" content="{% if page.image %}{{ site.url }}{{ page.image }}{% else %}{{ site.url }}/img/default-share-image.jpg{% endif %}" />
+  <meta name="twitter:description" content="{% if page.resumo %}{{ page.resumo }}{% else %} {{ site.description }} {% endif %}" />
+
+  <meta name="viewport" content="width=device-width" />
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <script src="/js/modernizr-custom.js"></script>
+</head>
+<body>
+    <div id="fb-root"></div>
+    <div class="header-entrada row container-custom">
+
+      <a href="/index.html" title="Ir para o inicio" class="foto">
+        <img src="/img/default-share-image.jpg" alt="" class="avatar span2" />
+      </a>
+
+      <div class="span7">
+        <h1>{{ site.title }}</h1>
+
+        <p>Blog sobre desenvolvimento de aplicativos nativos para SmartPhones usando JavaScript, HTML5 e CSS3.</p>
+
+        <nav class="nav-wrap">
+          <ul class="nav-itens-wrap">
+
+            {% if page.url != "/index.html" %}
+              <li class="nav-item-wrap">
+                <a href="/" title="Inicio" class="nav-item">Inicio</a>
+              </li>
+            {% endif %}
+
+            <li class="nav-item-wrap">
+              <a href="https://github.com/DevCastBrasil/nativebuild.com" title="Github" class="nav-item" target="_blank">Github</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    {{ content }}
+
+
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    {% include analytics.html %}
+
+    <script>
+      // Twitter share button
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+      // +1 button
+      window.___gcfg = {lang: 'pt-BR'};
+
+      (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+
+      // Facebook like button
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=416324911779071";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+</body>
+</html>
