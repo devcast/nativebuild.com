@@ -4,22 +4,46 @@ layout: v2
 <div class="container-custom">
   <article>
     <div class="post-container" itemscope itemtype="http://schema.org/BlogPosting">
-      <h1>{{ page.title }}</h1>
       {{ content }}
     </div>
 
     <div class="post-share-links">
-    	<!-- Place this tag where you want the +1 button to render. -->
-		<div class="g-plusone" data-size="medium"></div>
+        <!-- Place this tag where you want the +1 button to render. -->
+        <div class="g-plusone" data-size="medium" data-href="http://nativebuild.com{{ page.url }}"></div>
 
-		<!-- Facebook Like Button -->
-		<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+        <!-- Facebook Like Button -->
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-href="http://nativebuild.com{{ page.url }}"></div>
 
-		<a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ page.title }}" data-via="DevCastBrasil" data-lang="pt" data-related="DevCastBrasil">Tweetar</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ page.title }}" data-via="DevCastBrasil" data-lang="pt" data-related="DevCastBrasil" data-url="http://nativebuild.com{{ page.url }}">Tweetar</a>
     </div>
 
     <div id="disqus_thread"></div>
     <script type="text/javascript">
+
+        document.body.onload = function () {
+
+            // Twitter share button
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+            // +1 button
+            window.___gcfg = {lang: 'pt-BR'};
+
+            (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+
+            // Facebook like button
+            (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=416324911779071";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        }
+
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'nativebuilddotcom'; // required: replace example with your forum shortname
 
@@ -30,6 +54,7 @@ layout: v2
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
     </script>
+    <script async src="//codepen.io/assets/embed/ei.js"></script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 

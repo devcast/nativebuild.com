@@ -4,6 +4,7 @@ layout: v2-post
 author: Felquis Gimenes
 author_link: http://twitter.com/felquis
 author_profile: https://plus.google.com/102754289882659476963/
+twitter_creator: felquis
 image: /img/posts/phonegap-droid.png
 tags: phonegap,android,ubuntu
 keywords: phonegap,android,ubuntu

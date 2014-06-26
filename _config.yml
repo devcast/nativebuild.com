@@ -1,13 +1,12 @@
 title : "> Native Build"
 description: "Blog sobre desenvolvimento de aplicativos para smartphones com JavaScript, HTML5 e CSS3"
 
+encoding:    utf-8
 safe:        false
-auto:        true
-server:      true
-server_port: 4000
-baseurl:    /
-url: http://nativebuild.com
-paginate: 5
+port:        4000
+baseurl:     /
+url:         http://felquis.com
+paginate:    4
 
 source:      ./_source
 destination: ./_site
@@ -15,6 +14,6 @@ plugins:     ./_source/_plugins
 
 future:      true
 lsi:         false
-pygments:    true
-markdown:    maruku
-permalink: /:year/:title.html
+highlighter: pygments
+markdown:    kramdown
+permalink:   /:year/:title.html
