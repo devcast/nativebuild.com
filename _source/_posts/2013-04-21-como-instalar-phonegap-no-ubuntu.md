@@ -12,7 +12,9 @@ resumo: Neste post irei mostrar como compilar e testar um app para Android usand
 
 ---
 
-Hoje irei mostrar como compilar e testar um app para 
+ATENÇÃO: Este post foi atualizado, leia o novo em [Como instalar o PhoneGap/Cordova](/2014/como-instalar-phonegap-no-windows-ubuntu-mac-osx.html)
+
+Hoje irei mostrar como compilar e testar um app para
 Android usando PhoneGap sem precisar usar nenhuma IDE especifica, tudo via linha de comando.
 
 Ao final do post você estará apto para desenvolver um aplicativo completo.
@@ -31,12 +33,12 @@ Irei colocar na pasta ~/android-sdk
 ## Passo 2 - Instale o Java e o Ant
 
 O Android SDK precisa do Java, por que Android é movido a Java
-{% highlight bash %}
+{% highlight text %}
 sudo apt-get install openjdk-7-jdk
 {% endhighlight %}
 
 Também precisa do Ant, com ele você vai compilar todo o código e gerar o instalador do app.
-{% highlight bash %}
+{% highlight text %}
 sudo apt-get install ant
 {% endhighlight %}
 
@@ -47,12 +49,12 @@ Depois de baixar o Android SDK, você vai ter que adiciona-lo ao seu PATH para q
 Aqui estou usando o Ubuntu, acredito que no Mac seja bem semelhante.
 
 Abra o arquivo ~/.bash_profile na sua IDE
-{% highlight bash %}
+{% highlight text %}
 nano ~/.bash_profile
 {% endhighlight %}
 
 e adicione esses dois caminhos a variável PATH
-{% highlight bash %}
+{% highlight text %}
 export PATH=${PATH}:$HOME/android-sdk/sdk/platform-tools
 export PATH=${PATH}:$HOME/android-sdk/sdk/tools
 
@@ -60,14 +62,14 @@ export PATH=${PATH}:$HOME/android-sdk/sdk/tools
 
 Depois execute
 
-{% highlight bash %}
+{% highlight text %}
 source ~/.bash_profile
 {% endhighlight %}
 
 ## Passo 3 - Instale pacotes do Android
 
 Execute no terminal
-{% highlight bash %}
+{% highlight text %}
 android sdk
 {% endhighlight %}
 
@@ -77,7 +79,7 @@ Irá abrir esta Janela e você vai poder instalar várias versões do Android e 
 
 ## Passo 4 - Prepare um Android para testar no Emulador
 O comando
-{% highlight bash %}
+{% highlight text %}
 android avd
 {% endhighlight %}
 
@@ -114,31 +116,31 @@ No meu Ubuntu, tive problemas para executar o emulador,
 por que uso Ubuntu 12.10 64 bit
 e o compilador do Android SDK usa programas em 32 bit.
 Para resolver isso eu tive que instalar essa lib:
-{% highlight bash %}
+{% highlight text %}
 sudo apt-get install ia32-libs
 {% endhighlight %}
 
-Mas eu tive outro problema, a lib não instalava :/ ... Porque a lib tinha 
+Mas eu tive outro problema, a lib não instalava :/ ... Porque a lib tinha
 uma outra dependência que não era instalável no Ubuntu 12.10 64 bit.
 
-Para resolver esse segundo problema tiver que exutar o seguinte comando: 
-{% highlight bash %}
+Para resolver esse segundo problema tiver que exutar o seguinte comando:
+{% highlight text %}
 sudo dpkg --add-architecture i386 && sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade
 {% endhighlight %}
 Ai sim eu consegui instalar
 
-{% highlight bash %}
+{% highlight text %}
 sudo apt-get install ia32-libs
 {% endhighlight %}
 
 ## Passo 5 - Criar o primeiro projeto
 
 Para criar um novo projeto com Android SDK, vamos usar o comando "android create
-project" com os seguintes parâmetros: 
-PS: Primeiro mostrarei o atalho, depois a versão completa, então: 
+project" com os seguintes parâmetros:
+PS: Primeiro mostrarei o atalho, depois a versão completa, então:
 -n é o parâmetro abreviado e --name
 o parâmetro completo, você escolhe o que quer usar.
-{% highlight bash %}
+{% highlight text %}
 -n --name    : Nome do projeto
 -t --target  : Target ID [required]
 -p --path    : Pasta onde vai ser criado o projeto [required]
@@ -152,7 +154,7 @@ Onde:
 * package é o namespace do package do seu projeto, no caso deste exemplo eu usei teste.nativebuild.com.br ao contrário br.com.nativebuild.teste.
 
 Para criar o app de teste executei o seguinte comando
-{% highlight bash %}
+{% highlight text %}
 android create project -n teste -t 1 -p ~/project/phonegap -p br.com.nativebuild.teste -a testeActivity -k br.com.nativebuild.teste
 {% endhighlight %}
 
@@ -160,7 +162,7 @@ O SDK criará esta estrutura:
 
 <img src="/img/posts/android-sdk-create-project-teste.png" alt="">
 
-Eu poderia mostrar aqui como compilar nossa aplicação e testá-la no emulador, 
+Eu poderia mostrar aqui como compilar nossa aplicação e testá-la no emulador,
 mas até agora ainda não instalamos o PhoneGap, então o próximo passo é...
 
 ## Passo 6 - Instalar o PhoneGap
@@ -215,7 +217,7 @@ Faça os seguintes passos:
 <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 <uses-permission android:name="android.permission.BROADCAST_STICKY" />
 {% endhighlight %}
-Isso são permissões de funcionalidades do app que estamos desenvolvendo, você não vai precisar de tudo 
+Isso são permissões de funcionalidades do app que estamos desenvolvendo, você não vai precisar de tudo
 isso, só coloquei para exemplificar. Por exemplo se você precisar usar a camera do celular, basta adicionar
 a permissão de camera assim como é [mostrado na documentação](http://docs.phonegap.com/en/2.6.0/cordova_camera_camera.md.html#Camera)
 
@@ -224,28 +226,28 @@ Bom, até aqui já temos tudo pronto e configurado, agora só nos resta aprender
 ## Passo 7 - Compilar e instalar o aplicativo
 
 Para compilar o aplicativo, basta executar:
-{% highlight bash %}
+{% highlight text %}
 ant debug
 {% endhighlight %}
 
 Na pasta bin/ será criado um teste-debug.apk onde teste é o nome do aplicativo.
 
-Para testar um app você precisa primeiro estar com o emulador rodando. 
+Para testar um app você precisa primeiro estar com o emulador rodando.
 Basta entrar em android avd e dar um start em algum que você criou.
 
 Se você quiser uma forma mais rápida de iniciar o emulador, basta memorizar o nome
 do device que você criou no "android avd" e executar o comando:
-{% highlight bash %}
+{% highlight text %}
 emulator @nome_do_device
 {% endhighlight %}
 No meu caso, eu criei o device "s", então fica assim:
-{% highlight bash %}
+{% highlight text %}
 emulator @s
 {% endhighlight %}
 
-Quando o seu emulador já estiver rodando, para instalar e reinstalar um aplicativo 
+Quando o seu emulador já estiver rodando, para instalar e reinstalar um aplicativo
 nele, basta executar este comando:
-{% highlight bash %}
+{% highlight text %}
 adb install -r bin/teste-debug.apk
 {% endhighlight %}
 
@@ -257,18 +259,18 @@ Aplicativo aberto
 
 <img src="/img/posts/android-sdk-install-first-app-aberto.png" alt="" width="400">
 
-Quando você estiver desenvolvendo um aplicativo, você vai precisar compilar e testar 
+Quando você estiver desenvolvendo um aplicativo, você vai precisar compilar e testar
 de uma forma mais rápida, então você pode executar este comando para compilar e instalar
 no emulador em seguida:
 
-{% highlight bash %}
+{% highlight text %}
 ant debug install
 {% endhighlight %}
 
 Faça alguns testes, altere o HTML, compile novamente, teste etc...
 
 ## Conclusão
-Neste post vimos como configurar um ambiente de desenvolvimento para Android sem uso do Eclipse. 
+Neste post vimos como configurar um ambiente de desenvolvimento para Android sem uso do Eclipse.
 A partir daqui você fica com o caminho livre para ler a (documentação do PhoneGap)[http://docs.phonegap.com/en/2.6.0/] e fazer vários testes.
 
 Boa sorte :D
