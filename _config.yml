@@ -5,7 +5,7 @@ encoding:    utf-8
 safe:        false
 port:        4000
 baseurl:     /
-url:         http://felquis.com
+url:         http://nativebuild.com
 paginate:    4
 
 source:      ./_source
