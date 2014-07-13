@@ -8,7 +8,7 @@
 
 	// Animação do nome do blog
 	var $h1 = document.querySelector('.header-entrada h1'),
-		text = $h1.innerText,
+		text = $h1.innerText || $h1.textContent,
 		$key, i = 0;
 
 	$h1.removeChild($h1.firstChild);
