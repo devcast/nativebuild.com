@@ -39,5 +39,7 @@
     element.setAttribute('style', '-webkit-animation-delay: ' + delay + 'ms;' +
                                   '-moz-animation-delay: ' + delay + 'ms;' +
                                   'animation-delay: ' + delay + 'ms;');
+
+    element.classList.add('animate');
   });
 }());

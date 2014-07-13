@@ -22,15 +22,23 @@
             content: '|';
             position: relative;
             top: -4px;
+
             -webkit-animation-duration: 700ms;
-            animation-duration: 700ms;
             -webkit-animation-name: typeThisOpacity;
-            animation-name: typeThisOpacity;
             -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
             -webkit-animation-direction: normal;
-            animation-direction: normal;
             -webkit-animation-timing-function: steps(2, end);
+
+            -moz-animation-duration: 700ms;
+            -moz-animation-name: typeThisOpacity;
+            -moz-animation-iteration-count: infinite;
+            -moz-animation-direction: normal;
+            -moz-animation-timing-function: steps(2, end);
+
+            animation-duration: 700ms;
+            animation-name: typeThisOpacity;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
             animation-timing-function: steps(2, end);
         }
     }
@@ -48,6 +56,15 @@
 }
 
 @-webkit-keyframes typeThisOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes typeThisOpacity {
     0% {
         opacity: 0;
     }
