@@ -17,6 +17,22 @@
         margin: 0;
         padding: 0;
         line-height: 24px;
+
+        &:after {
+            content: '|';
+            position: relative;
+            top: -4px;
+            -webkit-animation-duration: 700ms;
+            animation-duration: 700ms;
+            -webkit-animation-name: typeThisOpacity;
+            animation-name: typeThisOpacity;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-direction: normal;
+            animation-direction: normal;
+            -webkit-animation-timing-function: steps(2, end);
+            animation-timing-function: steps(2, end);
+        }
     }
 
     p {
@@ -28,5 +44,23 @@
         width: 100px;
         height: 100px;
         border-radius: 50%;
+    }
+}
+
+@-webkit-keyframes typeThisOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes typeThisOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

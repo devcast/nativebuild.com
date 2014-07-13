@@ -1,30 +1,29 @@
-// 5 Jan 2013, 2:37
-$(function () {
-	var menuLinks = $('.nav-item-wrap'),
-		menuItens = $('.nav-item');
+'use strict';
 
-	// Ao clicar em um item do menu
-	menuLinks.on('click', function () {
-		_gaq.push(['_trackEvent', 'Links menu', 'click', 'Menu item ' + $(this).text().trim()]);
-	});
+;(function () {
 
-	// Ao entrar em um item do menu, começa a contar o tempo
-	menuLinks.on('mouseover', function () {
-		var entrada = new Date(),
-			nomeItem = $(this).text().trim();
+	if (!!sessionStorage._nativebuild_header_sucks) {
+		return false;
+	}
 
-		// Ao retirar o mouse do item
-		menuLinks.on('mouseout.onMouseEnter', function () {
-			var tempo = (new Date()).getTime() - entrada.getTime();
+	// Animação do nome do blog
+	var $h1 = document.querySelector('.header-entrada h1'),
+		text = $h1.innerText,
+		$key, i = 0;
 
-			// Se o tempo que permaneceu for maior que 1 segundo
-			if (tempo > 1000) {
-				// Registro
-				_gaq.push(['_trackEvent', 'Links menu', 'Mouse enter', 'Item:' + nomeItem + ', tempo: ' + tempo]);
-			}
+	$h1.removeChild($h1.firstChild);
+	sessionStorage._nativebuild_header_sucks = ':)';
 
-			// Retiro o evento do mouseout
-			menuLinks.off('mouseout.onMouseEnter');
-		});
-	});
-});
+	var time = setInterval(function () {
+		$key = document.createElement('span');
+		$key.innerHTML = text[i];
+
+		$h1.appendChild($key);
+
+		if (!!text[i + 1]) {
+			i++;
+		} else {
+			clearInterval(time);
+		}
+	}, 150);
+}());
