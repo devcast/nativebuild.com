@@ -2,10 +2,10 @@
 
 @import "bootstrap.scss";
 
-@import url(http://fonts.googleapis.com/css?family=Share+Tech);
+@import url(//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700);
 
 body {
-    font-family: "Share Tech";
+    font-family: "Noto Serif";
     overflow-y: scroll
 }
 
@@ -40,28 +40,38 @@ a:hover {
 
 @import 'modules/default/_default-code.scss';
 
+%font-titles {
+    font-family: "Open Sans";
+}
+
 h1, .h1 {
     font-size: 25px;
+    @extend %font-titles;
 }
 
 h2, .h2 {
     font-size: 23px;
+    @extend %font-titles;
 }
 
 h3, .h3 {
     font-size: 21px;
+    @extend %font-titles;
 }
 
 h4, .h4 {
     font-size: 19px;
+    @extend %font-titles;
 }
 
 h5, .h5 {
     font-size: 17px;
+    @extend %font-titles;
 }
 
 h6, .h6 {
     font-size: 15px;
+    @extend %font-titles;
 }
 
 .underline {
