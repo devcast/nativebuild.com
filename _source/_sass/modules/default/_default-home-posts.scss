@@ -12,6 +12,36 @@
   }
 }
 
+.post-list-wrapper {
+  -webkit-perspective: 400px;
+
+  .post-list-item {
+    -webkit-transform-origin: top;
+    -webkit-perspective-origin: top;
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -webkit-animation-duration: 700ms;
+    -webkit-animation-name: introPostArticle;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-direction: normal;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-transform: rotateX(90deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes introPostArticle {
+  0% {
+    -webkit-transform: rotateX(90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
 .home-post-image {
   float: left;
   position: relative;

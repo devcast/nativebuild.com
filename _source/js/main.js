@@ -27,3 +27,17 @@
 		}
 	}, 150);
 }());
+
+(function () {
+
+  var $articles = document.querySelectorAll('.container-custom article'),
+      delay;
+
+  [].forEach.call($articles, function (element, i) {
+    delay = 250 * i;
+
+    element.setAttribute('style', '-webkit-animation-delay: ' + delay + 'ms;' +
+                                  '-moz-animation-delay: ' + delay + 'ms;' +
+                                  'animation-delay: ' + delay + 'ms;');
+  });
+}());

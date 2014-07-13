@@ -1,9 +1,9 @@
 ---
 layout: v2
 ---
-<div class="container-custom">
+<div class="container-custom post-list-wrapper">
 {% for post in paginator.posts %}
-	<article>
+	<article class="post-list-item">
 		<div class="home-post-container" itemscope itemtype="http://schema.org/BlogPosting">
 			<span hidden itemprop="publisher">Felquis</span>
 			<a href="{{ post.url }}" itemprop="headline" class="home-post-link">
