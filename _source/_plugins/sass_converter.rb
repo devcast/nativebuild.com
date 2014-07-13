@@ -23,7 +23,7 @@ module Jekyll
         Compass::Exec::SubCommandUI.new(%w(compile)).run!
       end
     end
-    
+
   end
-  
+
 end
