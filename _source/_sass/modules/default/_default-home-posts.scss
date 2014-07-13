@@ -1,80 +1,80 @@
 .home-post-container,
 .post-container {
-    margin: 20px 0 0 22px;
+  margin: 20px 0 0 22px;
 
-    p {
-        font-size: 16px;
-    }
+  p {
+    font-size: 16px;
+  }
 
-    h2 {
-        margin: 0;
-        line-height: 35px;
-    }
+  h2 {
+    margin: 0;
+    line-height: 35px;
+  }
 }
 
 .home-post-image {
-    float: left;
-    position: relative;
-    width: 190px;
-    height: 150px;
-    overflow: hidden;
-    margin: 0 11px 0 0;
+  float: left;
+  position: relative;
+  width: 190px;
+  height: 150px;
+  overflow: hidden;
+  margin: 0 11px 0 0;
 
-    img {
-        position: absolute;
-    }
+  img {
+    position: absolute;
+  }
 }
 
 .home-post-resumo {
-    line-height: 15px;
+  line-height: 15px;
 }
 
 .home-post-link {
-    display: block;
-    overflow: hidden;
+  display: block;
+  overflow: hidden;
+
+  img {
+    transition: all 10s linear;
+    -webkit-transition: all 10s linear;
+    -moz-transition: all 10s linear;
+    -o-transition: all 10s linear;
+    -ms-transition: all 10s linear;
+    background: url(/img/img-loading.gif) center center no-repeat;
+  }
+
+  &:hover, &:focus {
+
+    p, h2 {
+      color: #6B6B6B;
+    }
+
+    h2 {
+      text-decoration: underline;
+    }
 
     img {
-        transition: all 10s linear;
-        -webkit-transition: all 10s linear;
-        -moz-transition: all 10s linear;
-        -o-transition: all 10s linear;
-        -ms-transition: all 10s linear;
-        background: url(/img/img-loading.gif) center center no-repeat;
+      -webkit-transform: scale(1.4);
     }
-
-    &:hover, &:focus {
-
-        p, h2 {
-            color: #6B6B6B;
-        }
-
-        h2 {
-            text-decoration: underline;
-        }
-
-        img {
-            -webkit-transform: scale(1.4);
-        }
-    }
+  }
 }
 
 .post-container {
-    a {
-        border-bottom: 1px dashed #333;
-    }
+  a {
+    border-bottom: 1px dashed #333;
+  }
 
 }
 
 .fb-like {
-    position: relative;
-    top: -3px;
-    margin: 0 33px 0 0;
+  position: relative;
+  top: -3px;
+  margin: 0 33px 0 0;
 }
 
 #disqus_thread,
 .post-share-links {
-    margin: 17px 0 0 23px;
-    padding: 20px 0 0 0;
-    width: 677px;
-    border-top: 1px dashed #999;
+  margin: 17px 0 0 23px;
+  padding: 20px 0 0 0;
+  width: 677px;
+  border-top: 1px dashed #999;
 }
