@@ -49,6 +49,13 @@ layout: v2
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'nativebuilddotcom'; // required: replace example with your forum shortname
 
+        /*
+        var disqus_shortname = 'example'; // Required - Replace example with your forum shortname
+        var disqus_identifier = 'a unique identifier for each page where Disqus is present';
+        var disqus_title = 'a unique title for each page where Disqus is present';
+        */
+        var disqus_url = location.href.replace(location.search, '').replace(location.hash, '');
+
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
