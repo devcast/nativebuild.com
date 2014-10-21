@@ -75,6 +75,7 @@
   .il { color: #e5786d; } /* Literal.Number.Integer.Long */
 }
 
-.highlight .text {
+.highlight .text,
+.highlight .language-text {
   color: #fff;
 }
