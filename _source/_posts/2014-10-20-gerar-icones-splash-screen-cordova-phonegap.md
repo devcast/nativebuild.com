@@ -5,7 +5,7 @@ author: Felquis Gimenes
 author_link: http://twitter.com/felquis
 author_profile: https://plus.google.com/102754289882659476963/
 twitter_creator: felquis
-image: /img/posts/phonegap.png
+image: /img/posts/gsi-base-icon.png
 tags: phonegap,cordova,android,ios,splash screen,icons,generate
 keywords: phonegap,cordova,android,ios,splash screen,icons,generate
 resumo: Quando iniciei no mundo de cordova e phonegap, o tamanho de splash screen e ícones era um grande  mistério para mim, depois que aprendi a usar-los, percebi que o problema era mante-los, de forma que quando ouvesse alguma atualização, as splash screen e ícones podussem ser mudificados de forma istantanea.
@@ -14,7 +14,7 @@ resumo: Quando iniciei no mundo de cordova e phonegap, o tamanho de splash scree
 
 ---
 
-## Como gerar ícones e splash screen automaticamente
+# Como gerar ícones e splash screen automaticamente
 
 Quando iniciei no mundo de cordova e phonegap, o tamanho de splash screen e ícones era um grande mistério para mim, depois que aprendi a usar-los, percebi que o problema era mante-los, de forma que quando ouvesse alguma atualização, as splash screen e ícones podussem ser mudificados de forma istantanea.
 
@@ -34,27 +34,32 @@ Em nosso contexto, principalmente o comando `convert` do imagemagick tem que est
 
 Após criar um projeto com o comando `cordova create appTest`, faça os seguintes passos
 
-1 - Baixe o arquivo `gsi.sh` [deste repositório](https://github.com/tlvince/phonegap-icon-splash-generator) e salve na raiz do projeto em que você quer gerar a splash screen e ícones
+1 - Baixe o arquivo `gsi.sh` [deste repositório](https://github.com/felquis/generate-splash-screen-and-icons) e salve na raiz do projeto em que você quer gerar a splash screen e ícones
 2 - Crie uma imagem para ser usada como base para gerar as splash screens, essa imagem deverá ter 2048x2048 (variando conforme sua necessidade), essa imagem tem que ter nome `gsi-base-splash.png`
 3 - Crie uma imagem para ser usada como base para gerar os ícons, essa imagem deve ter até 500x500, variando conforme a sua necessidade, essa imagem ter que ter o nome `gsi-base-icon.png`
 
 Seu projeto ficará assim:
 
-<img src="/img/posts/gsi-project-folders">
+<img src="/img/posts/gsi-project-folders.png">
+
+OBS: Se você quiser, clone o repositório com os exemplos
+{% highlight text %}
+  git clone git@github.com:felquis/generate-splash-screen-and-icons.git
+{% endhighlight %}
 
 ## Gerando imagens automaticamente
 
 Abra seu terminal, vá para a pasta onde está seu projeto, e digite o comando `sh gsi.sh`, o script irá mostrar algo assim para você, dizendo que está gerando imagem por imagem
 
-<img src="img/post/gsi-output-print.png">
+<img src="/img/posts/gsi-output-print.png">
 
 No final, a pasta `res` será criada na raiz do seu projeto, com essa estrutura:
 
-<img src="img/post/gsi-output-files.png">
+<img src="/img/posts/gsi-output-files.png">
 
 ## Coloque os ícones e splash screen em seu config.xml
 
-Seu config.xml ficará assim, especificando cada ícone e cada splash screen.
+Seu `config.xml` ficará assim, especificando cada ícone e cada splash screen.
 {% highlight xml %}
 <platform name="android">
     <splash density="land-hdpi" src="res/screen/android/drawable-land-hdpi.png" />
@@ -109,7 +114,7 @@ Vamos adicionar as platformas iOS e Android `cordova platforms add ios`, `cordov
 
 OBS: Os dois comandos são válidos `cordova platform` e `cordova platforms`
 
-Uma dica aqui é você observar que no output na hora que o cordova adiciona uma platform, ele não reclama que você especificou no config.xml uma imagem que não existe, isso significa que as imagens que você colocou no config.xml existem dentro da pasta `res` e ele pegou as imagens de ícones e splash screens corretamente.
+Uma dica aqui é você observar que no output na hora que o cordova adiciona uma platform, ele não reclama que você especificou no `config.xml` uma imagem que não existe, isso significa que as imagens que você colocou no `config.xml` existem dentro da pasta `res` e ele pegou as imagens de ícones e splash screens corretamente.
 
 ## Fazendo um build para iOS
 
@@ -117,15 +122,17 @@ Execute o comando `cordova emulate ios`, o projeto será buildado e o emulador d
 
 <img src="/img/posts/gsi-on-ios.gif" width="300">
 
+Lembre-se que só é possível emular o iOS em um OSX, não é possível testa-lo em Linux ou Windows
+
 ## Fazendo um build para Android
 
-PS: No meu caso eu não uso um emulador do Android, eu faço build direto no meu Android
+PS: No meu caso eu não uso um emulador do Android, eu faço build direto no meu Android, por isso eu não uso `cordova emulate` e sim `cordova run`
 
 Precisamos colocar uma linha a mais para funcionar no Android, isso porque no Android não é padrão usar uma splash screen, mas muita gente usa.
 
 Abaixo da linha `<platform name="android">` adicione `<preference name="SplashScreen" value="screen" />`
 
-Isso porque, por default, o cordova irá procurar por imagens chamadas splash.png dentro da pasta `platforms/android/res/**` porém o cordova nomeia os arquivos como `screen.png`
+Isso porque, por default, o cordova irá procurar por imagens chamadas `splash` dentro da pasta `platforms/android/res/*` porém o cordova nomeia os arquivos como `screen.png`
 
 Agora sim! Execute o comando `cordova run android`, o projeto será buildado e aberto no device Android como no GIF baixo:
 
@@ -138,4 +145,4 @@ Algumas coisas que você pode achar interessante, no Android tem algumas opçõe
 Splash screen são muito úteis, o ideal é que sem app seja tão rápido que não precise de uma splash screen, mas se precisar, está ai na mão :D
 
 * [Configurações do Cordova específicas para Android](http://cordova.apache.org/docs/en/4.0.0/guide_platforms_android_config.md.html)
-* 
+* O script para gerar as splash screens [foi adaptado deste aqui](https://github.com/tlvince/phonegap-icon-splash-generator)
