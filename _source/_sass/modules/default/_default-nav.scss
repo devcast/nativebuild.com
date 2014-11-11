@@ -1,34 +1,53 @@
-.nav-wrap {
+/*
+<nav class="nav-wrap">
+  <ul>
+    <li class="nav-item-wrap">
+      <a href="#" title="Blog" class="nav-item">Blog</a>
+    </li>
+    <li class="nav-item-wrap">
+      <a href="#" title="Github" class="nav-item">Github</a>
+    </li>
+    <li class="nav-item-wrap">
+      <a href="#" title="Contato" class="nav-item">Contato</a>
+    </li>
+    <li class="nav-item-wrap">
+      <a href="#" title="Projetos" class="nav-item">Projetos</a>
+    </li>
+  </ul>
+  </nav>
+*/
 
+.nav-wrap {
+  width: 100%;
 }
 
 .nav-itens-wrap {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .nav-item-wrap {
-    float: left;
+  display: inline-block;
 
-    .nav-item {
-        display: block;
-        margin: 0 10px 0 0;
-        text-decoration: none;
-        color: #333;
+  .nav-item {
+    margin: 0 10px 0 0;
+    text-decoration: none;
+    color: #333;
 
-        -webkit-transition: all 0.2s linear;
-        -moz-transition: all 0.2s linear;
-        -o-transition: all 0.2s linear;
-        -ms-transition: all 0.2s linear;
-        transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    transition: all 0.2s linear;
 
-        &:hover {
-            -webkit-transform: scale(1.2);
-            -moz-transform: scale(1.2);
-            -o-transform: scale(1.2);
-            -ms-transform: scale(1.2);
-            transform: scale(1.2);
-        }
-    }
+  }
+
+  &:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
 }

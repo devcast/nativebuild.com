@@ -33,33 +33,33 @@
 <body>
     <div id="fb-root"></div>
     <div class="header-entrada row container-custom">
-        <a href="/index.html" title="Ir para o inicio">
-            <img src="/img/default-share-image.jpg" alt="" class="avatar span2" />
+        <a href="/index.html" title="Ir para o inicio" class="header-avatar">
+          <img src="/img/default-share-image.jpg" alt="" class="header-avatar-image" />
         </a>
 
-        <div class="span7">
-            <h1>{{ site.title }}</h1>
+        <div>
+          <h1 class="header-title">{{ site.title }}</h1>
+        </div>
 
-            <p>{{ site.description }}</p>
+        <div class="navigation">
+          <nav class="nav-wrap">
+              <ul class="nav-itens-wrap">
 
-            <nav class="nav-wrap">
-                <ul class="nav-itens-wrap">
-
-                  {% if page.url != "/index.html" %}
-                    <li class="nav-item-wrap">
-                      <a href="/" title="Inicio" class="nav-item">Inicio</a>
-                    </li>
-                  {% endif %}
-
+                {% if page.url != "/index.html" %}
                   <li class="nav-item-wrap">
-                    <a href="https://github.com/DevCastBrasil/nativebuild.com" title="Github" class="nav-item" target="_blank">Github</a>
+                    <a href="/" title="Inicio" class="nav-item">Inicio</a>
                   </li>
+                {% endif %}
 
-                  <li class="nav-item-wrap">
-                    <a href="https://www.facebook.com/NativeBuild" title="Facebook NativeBuild" class="nav-item" target="_blank">Facebook</a>
-                  </li>
-                </ul>
-            </nav>
+                <li class="nav-item-wrap">
+                  <a href="https://github.com/DevCastBrasil/nativebuild.com" title="Github" class="nav-item" target="_blank">Github</a>
+                </li>
+
+                <li class="nav-item-wrap">
+                  <a href="https://www.facebook.com/NativeBuild" title="Facebook NativeBuild" class="nav-item" target="_blank">Facebook</a>
+                </li>
+              </ul>
+          </nav>
         </div>
     </div>
 
@@ -79,7 +79,6 @@
 
     <hr class="row">
 
-    <script src="js/main.js"></script>
     <script>
         {% include analytics.js %}
 

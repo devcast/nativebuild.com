@@ -1,99 +1,25 @@
 .home-post-container,
 .post-container {
-  margin: 20px 0 0 22px;
+  padding: 1em;
+  margin: 1em 0;
+  -webkit-box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow:    0px 10px 10px 0px rgba(0, 0, 0, 0.05);
+  box-shadow:         0px 10px 10px 0px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e3e3e3;
 
   p {
     font-size: 16px;
   }
 
   h2 {
-    margin: 0;
+    margin: 1em 0;
     line-height: 35px;
   }
 }
 
-.post-list-wrapper {
-  -webkit-perspective: 400px;
-  -moz-perspective: 400px;
-  perspective: 400px;
-
-  .post-list-item {
-    -webkit-transform-origin: top;
-    -webkit-perspective-origin: top;
-    -webkit-transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-
-    -moz-transform-origin: top;
-    -moz-perspective-origin: top;
-    -moz-transform-style: preserve-3d;
-    -moz-backface-visibility: hidden;
-
-    transform-origin: top;
-    perspective-origin: top;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-
-    &.animate {
-      -webkit-animation-duration: 700ms;
-      -webkit-animation-name: introPostArticle;
-      -webkit-animation-iteration-count: 1;
-      -webkit-animation-direction: normal;
-      -webkit-animation-fill-mode: forwards;
-
-      -moz-animation-duration: 700ms;
-      -moz-animation-name: introPostArticle;
-      -moz-animation-iteration-count: 1;
-      -moz-animation-direction: normal;
-      -moz-animation-fill-mode: forwards;
-
-      animation-duration: 700ms;
-      animation-name: introPostArticle;
-      animation-iteration-count: 1;
-      animation-direction: normal;
-      animation-fill-mode: forwards;
-    }
-
-    -webkit-transform: rotateX(90deg);
-    -moz-transform: rotateX(90deg);
-    transform: rotateX(90deg);
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes introPostArticle {
-  0% {
-    -webkit-transform: rotateX(90deg);
-    opacity: 0;
-  }
-
-  100% {
-    -webkit-transform: rotateX(0deg);
-    opacity: 1;
-  }
-}
-
-@-moz-keyframes introPostArticle {
-  0% {
-    -moz-transform: rotateX(90deg);
-    opacity: 0;
-  }
-
-  100% {
-    -moz-transform: rotateX(0deg);
-    opacity: 1;
-  }
-}
-
-@keyframes introPostArticle {
-  0% {
-    transform: rotateX(90deg);
-    opacity: 0;
-  }
-
-  100% {
-    transform: rotateX(0deg);
-    opacity: 1;
-  }
+.home-post-container h2 {
+  margin: 0 0 1em 0;
+  line-height: 35px;
 }
 
 .home-post-image {
@@ -105,7 +31,7 @@
   margin: 0 11px 0 0;
 
   img {
-    position: absolute;
+  position: absolute;
   }
 }
 
@@ -138,8 +64,6 @@
 
     img {
       -webkit-transform: scale(1.4);
-      -moz-transform: scale(1.4);
-      transform: scale(1.4);
     }
   }
 }
@@ -159,8 +83,7 @@
 
 #disqus_thread,
 .post-share-links {
-  margin: 17px 0 0 23px;
-  padding: 20px 0 0 0;
-  width: 677px;
+  padding: 20px;
+  max-width: 100%;
   border-top: 1px dashed #999;
 }

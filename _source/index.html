@@ -3,20 +3,20 @@ layout: v2
 ---
 <div class="container-custom post-list-wrapper">
 {% for post in paginator.posts %}
-	<article class="post-list-item">
-		<div class="home-post-container" itemscope itemtype="http://schema.org/BlogPosting">
-			<span hidden itemprop="publisher">Felquis</span>
-			<a href="{{ post.url }}" itemprop="headline" class="home-post-link">
-				<h2>{{ post.title }}</h2>
+  <article class="post-list-item">
+    <div class="home-post-container" itemscope itemtype="http://schema.org/BlogPosting">
+      <span hidden itemprop="publisher">Felquis</span>
+      <a href="{{ post.url }}" itemprop="headline" class="home-post-link">
+        <h2>{{ post.title }}</h2>
 
-				{% if post.image %}
-				<figure class="home-post-image">
-					<img itemprop="thumbnailUrl" src="{{ post.image }}" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" />
-				</figure>
-				{% endif %}
-				<p itemprop="description" class="home-post-resumo">{{ post.resumo | markdownify }}</p>
-			</a>
-		</div>
-	</article>
+        {% if post.image %}
+        <figure class="home-post-image">
+          <img itemprop="thumbnailUrl" src="{{ post.image }}" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" />
+        </figure>
+        {% endif %}
+        <p itemprop="description" class="home-post-resumo">{{ post.resumo | markdownify }}</p>
+      </a>
+    </div>
+  </article>
 {% endfor %}
 </div>
